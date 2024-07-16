@@ -9,7 +9,7 @@ COPY . /go/src/k8s.io/kube-state-metrics/
 
 RUN make build-local
 
-FROM m.daocloud.io/gcr.io/distroless/static:latest-${GOARCH}
+FROM gcr.m.daocloud.io/distroless/static:latest-${GOARCH}
 COPY --from=builder /go/src/k8s.io/kube-state-metrics/kube-state-metrics /
 
 USER nobody
